@@ -12,7 +12,6 @@
   </head>
 
   <body>
-
     <div class="">
       <nav class="">
         <% unless request.path == root_path %>
@@ -22,6 +21,11 @@
           <%= link_to 'New Kitten', new_kitten_path, class: "link" %>
         <% end %>
       </nav>  
+    </div>
+    
+    <div class='flash'>
+      <p class='alert'><%= alert %></p>
+      <p class='notice'><%= notice %></p>
     </div>
 
     <main class="container mx-auto mt-28 px-5 flex">
