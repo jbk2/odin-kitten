@@ -14,7 +14,7 @@ class KittensController < ApplicationController
   end
 
   def create
-    @kitten = @kitten.new(kitten_params).save
+    @kitten = Kitten.new(kitten_params)
 
     if @kitten.save
       redirect_to @kitten, notice: "kitten was successfuly saved"
@@ -37,7 +37,7 @@ class KittensController < ApplicationController
 
   def destroy
     @kitten.destroy
-    redirect_to kittens_path, notice: 'Kitten was successfully destroyed.'
+    redirect_to new_kitten_path, notice: 'Kitten was successfully destroyed.'
   end
   
   private

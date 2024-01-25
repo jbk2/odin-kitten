@@ -17,7 +17,9 @@
         <td class="border text-xl py-2 px-4"><%= kitten.softness %></td>
         <td class="text-xl flex py-2 px-4 block justify-around">
           <%= link_to "Edit", edit_kitten_path(kitten.id), class: "btn-primary-sm text-center py-2 px-4 mr-4" %>
-          <%= link_to "Delete", kitten_path(kitten.id), method: 'destroy',  class: "btn-primary-sm text-center py-2 px-4 ml-4" %>
+          <%= button_to "Delete", kitten_path(kitten.id), method: :delete, data: { turbo: 'false', confirm: 'Are you sure?' }, class: "btn-primary-sm text-center py-2 px-4 ml-4" %>
+        
+
         </td>
       </tr>
     <% end %>
