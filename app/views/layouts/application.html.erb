@@ -18,7 +18,9 @@
         <% unless request.path == root_path %>
           <%= link_to 'All Kittens', kittens_path, class: "link" %>
         <% end %>
-        
+        <% unless request.path == new_kitten_path %>
+          <%= link_to 'New Kitten', new_kitten_path, class: "link" %>
+        <% end %>
       </nav>  
     </div>
 

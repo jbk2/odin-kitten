@@ -9,7 +9,7 @@
   <%= f.number_field :cuteness %>
   <div class="flex justify-between">
     <%= f.submit class: "mt-2 btn-primary-md" %>
-    <% if request.path == edit_kitten_path %>
+    <% if @kitten.persisted? %>
       <%= button_to "Show", kitten_path(@kitten), class: "mt-2 btn-primary-md" %>
     <% end %>
   </div>
