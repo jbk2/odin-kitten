@@ -11,15 +11,13 @@
   <tbody>
     <% kittens.each do |kitten| %>
       <tr class="">
-        <td class="border text-xl py-2 px-4"><%= kitten.name %></td>
-        <td class="border text-xl py-2 px-4"><%= kitten.age %></td>
-        <td class="border text-xl py-2 px-4"><%= kitten.cuteness %></td>
-        <td class="border text-xl py-2 px-4"><%= kitten.softness %></td>
-        <td class="text-xl flex py-2 px-4 block justify-around">
-          <%= link_to "Edit", edit_kitten_path(kitten.id), class: "btn-primary-sm text-center py-2 px-4 mr-4" %>
+        <td class="border text-xl py-2 px-4"><%= link_to kitten.name, kitten_path(kitten.id), class: "" %></td>
+        <td class="border text-xl py-2 px-4"><%= link_to kitten.age, kitten_path(kitten.id) %></td>
+        <td class="border text-xl py-2 px-4"><%= link_to kitten.cuteness, kitten_path(kitten.id) %></td>
+        <td class="border text-xl py-2 px-4"><%= link_to kitten.softness, kitten_path(kitten.id) %></td>
+        <td class="text-xl flex py-2 px-4 justify-around">
+          <%= link_to "Edit", edit_kitten_path(kitten.id), class: "btn-primary-sm text-center py-2 px-4" %>
           <%= button_to "Delete", kitten_path(kitten.id), method: :delete, data: { turbo: 'false', confirm: 'Are you sure?' }, class: "btn-primary-sm text-center py-2 px-4 ml-4" %>
-        
-
         </td>
       </tr>
     <% end %>

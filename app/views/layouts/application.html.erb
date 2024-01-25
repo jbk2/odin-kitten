@@ -15,16 +15,10 @@
 
     <div class="">
       <nav class="">
-        <% unless controller_name == 'kittens' && action_name == 'index' %>
+        <% unless request.path == root_path %>
           <%= link_to 'All Kittens', kittens_path, class: "link" %>
         <% end %>
-
-        <% if controller_name == 'kittens' && action_name == 'show' %>
-          <% unless action_name == 'edit' %>
-            <%= link_to 'Edit Kitten', edit_kitten_path(@kitten), class: "link" %>
-          <% end %>
-          <%= link_to 'Back to List', kittens_path, class: "link" %>
-        <% end %>
+        
       </nav>  
     </div>
 

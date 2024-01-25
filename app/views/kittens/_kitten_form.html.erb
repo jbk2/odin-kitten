@@ -7,5 +7,10 @@
   <%= f.number_field :softness %>
   <%= f.label :cuteness %>
   <%= f.number_field :cuteness %>
-  <%= f.submit class: "mt-2 btn-primary-md" %>
+  <div class="flex justify-between">
+    <%= f.submit class: "mt-2 btn-primary-md" %>
+    <% if request.path == edit_kitten_path %>
+      <%= button_to "Show", kitten_path(@kitten), class: "mt-2 btn-primary-md" %>
+    <% end %>
+  </div>
 <% end %>
