@@ -12,6 +12,22 @@
   </head>
 
   <body>
+
+    <div class="">
+      <nav class="">
+        <% unless controller_name == 'kittens' && action_name == 'index' %>
+          <%= link_to 'All Kittens', kittens_path, class: "link" %>
+        <% end %>
+
+        <% if controller_name == 'kittens' && action_name == 'show' %>
+          <% unless action_name == 'edit' %>
+            <%= link_to 'Edit Kitten', edit_kitten_path(@kitten), class: "link" %>
+          <% end %>
+          <%= link_to 'Back to List', kittens_path, class: "link" %>
+        <% end %>
+      </nav>  
+    </div>
+
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
